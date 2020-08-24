@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+        tools:context=".MainActivity"
+    android:background="@drawable/cov_back3"
+
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:background="@drawable/main_back">
+
+
+        <ImageView
+            android:layout_margin="3dp"
+            android:layout_width="49dp"
+            android:layout_height="36dp"
+            android:layout_gravity="right"
+            android:foregroundGravity="right"
+            android:src="@drawable/usmba"></ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="321dp"
+
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgCovidLogo"
+                android:layout_width="111dp"
+                android:layout_height="133dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:src="@drawable/covid_logo"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <TextView
+                android:id="@+id/textLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/leckerlioneregular"
+                android:gravity="center"
+                android:text="Covid-19 detection"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

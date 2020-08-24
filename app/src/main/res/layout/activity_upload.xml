@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UploadActivity">
+    <com.google.android.material.appbar.MaterialToolbar
+        android:elevation="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:background="@android:color/transparent"
+            android:id="@+id/btn_back"
+            android:tint="@color/colorBlack"
+            android:onClick="cancel">
+        </ImageButton>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Image"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/leckerlioneregular"
+            android:background="@android:color/transparent"
+            android:gravity="center"></TextView>
+
+
+    </com.google.android.material.appbar.MaterialToolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:id="@+id/imgPredect"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Change photo"
+                android:textColor="@color/colorPrimary"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:onClick="changePhoto"
+                android:layout_marginBottom="20dp"
+                tools:ignore="OnClick" />
+
+
+            <Button
+                android:id="@+id/btnPridect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_round"
+                android:text="Predict"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/colorWhite"
+                android:textSize="22dp"
+                android:fontFamily="@font/leckerlioneregular"
+                android:layout_marginBottom="50dp"
+                android:textAllCaps="false"
+                ></Button>
+
+            <TextView
+                android:id="@+id/txt_res"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textSize="20dp">
+
+            </TextView>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

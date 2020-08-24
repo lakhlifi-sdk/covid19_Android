@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:id="@+id/aboutus"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cov_back3">
+
+    <!--<TextView-->
+    <!--android:layout_marginTop="3dp"-->
+    <!--android:text="About Us"-->
+    <!--android:fontFamily="@font/nabila"-->
+    <!--android:gravity="center"-->
+    <!--android:textStyle="bold"-->
+    <!--android:textSize="30sp"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content" />-->
+
+    <!--<LinearLayout-->
+    <!---->
+    <!--android:orientation="horizontal"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content">-->
+
+    <!--</LinearLayout>-->
+
+</LinearLayout>
