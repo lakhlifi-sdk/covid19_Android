@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
@@ -21,6 +22,18 @@ import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
+import com.karumi.dexter.listener.single.DialogOnDeniedPermissionListener;
+import com.karumi.dexter.listener.single.PermissionListener;
+
+import java.util.List;
+
 public class HomeActivity extends AppCompatActivity {
     private final static int GALLERY_UPLOAD_PHOTO = 1;
     private static final int REQUEST_ID_IMAGE_CAPTURE = 1;
@@ -28,11 +41,8 @@ public class HomeActivity extends AppCompatActivity {
     private static final String TAG = "CDA";
     private Uri uri;
     private ImageButton btn_mor_options;
-
-
     private Button btn_upload, btn_takePictur;
     private Animation animFadein,animFadeinText;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +58,37 @@ public class HomeActivity extends AppCompatActivity {
         btn_takePictur.setAnimation(animFadeinText);
         btn_upload.setAnimation(animFadeinText);
         btn_mor_options.setAnimation(animFadein);
+
+        Dexter.withActivity(this)
+                .withPermissions(
+                        Manifest.permission.CAMERA,
+                        Manifest.permission.READ_CONTACTS,
+                        Manifest.permission.RECORD_AUDIO
+                ).withListener(new MultiplePermissionsListener() {
+            @Override public void onPermissionsChecked(MultiplePermissionsReport report) {/* ... */}
+            @Override public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {/* ... */}
+        }).check();
+
+        PermissionListener dialogPermissionListener =
+                DialogOnDeniedPermissionListener.Builder
+                        .withContext(this)
+                        .withTitle("Camera permission")
+                        .withMessage("Camera permission is needed to take pictures of your cat")
+                        .withButtonText(android.R.string.ok)
+                        .withIcon(R.mipmap.ic_launcher)
+                        .build();
+
+        Dexter.withActivity(this)
+                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                .withListener(new PermissionListener() {
+                    @Override public void onPermissionGranted(PermissionGrantedResponse response) {}
+                    @Override public void onPermissionDenied(PermissionDeniedResponse response) {}
+
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+
+                    }
+                }).check();
 
         init();
     }
@@ -70,9 +111,10 @@ public class HomeActivity extends AppCompatActivity {
         btn_takePictur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                //Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 /* Démarrer la caméra et attendre le résultat */
-                startActivityForResult(intent, READ_REQUEST_CODE);
+                //startActivityForResult(intent, READ_REQUEST_CODE);
+                startActivity(new Intent(HomeActivity.this,HomeActivity.class));
 
             }
         });
@@ -119,8 +161,6 @@ public class HomeActivity extends AppCompatActivity {
             uri = null;
             if (data != null) {
                 uri = data.getData();
-                Log.i(TAG, "Uri: " + uri.toString());
-                Uri uri = data.getData();
                 Intent intent = new Intent(HomeActivity.this, UploadActivity.class);
                 intent.setData(uri);
                 startActivity(intent);
