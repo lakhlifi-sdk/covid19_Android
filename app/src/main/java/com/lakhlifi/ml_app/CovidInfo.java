@@ -31,10 +31,8 @@ public class CovidInfo extends AppCompatActivity {
 
             WebViewClientImpl webViewClient = new WebViewClientImpl(this);
             this.webView.setWebViewClient(webViewClient);
-
             webView.loadUrl("https://www.coronatracker.com/ar/country/morocco");
-
-
+            //webView.loadUrl("https://www.coronatracker.com/ar/country/morocco");
     }
 
     @Override
