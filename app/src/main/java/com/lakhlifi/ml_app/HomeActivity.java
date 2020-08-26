@@ -111,11 +111,11 @@ public class HomeActivity extends AppCompatActivity {
         btn_takePictur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 /* Démarrer la caméra et attendre le résultat */
-                //startActivityForResult(intent, READ_REQUEST_CODE);
-                startActivity(new Intent(HomeActivity.this,HomeActivity.class));
-                finish();
+                startActivityForResult(intent, READ_REQUEST_CODE);
+                //startActivity(new Intent(HomeActivity.this,HomeActivity.class));
+                //finish();
 
             }
         });
