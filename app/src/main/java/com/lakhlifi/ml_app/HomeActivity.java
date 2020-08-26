@@ -115,6 +115,7 @@ public class HomeActivity extends AppCompatActivity {
                 /* Démarrer la caméra et attendre le résultat */
                 //startActivityForResult(intent, READ_REQUEST_CODE);
                 startActivity(new Intent(HomeActivity.this,HomeActivity.class));
+                finish();
 
             }
         });
