@@ -21,7 +21,7 @@ public class About_us extends AppCompatActivity {
         String desc="Our story began in 2009 when Marko Anastasov and Darko Fabijan, two friends from university, set up the company while working at the same time on their social web startup and for clients. From the beginning we were passionate about both making software and the effects great products have on people. We have combined those in creating Semaphore, which we launched in 2012, and transitioned to become a product company. Now that we are responsible for a service used in over 100 countries, we feel like we're only getting started. ";
 
         Element versionElement = new Element();
-        versionElement.setTitle("Version 0.1");
+        versionElement.setTitle("Version 0.2");
         versionElement.setIconDrawable(R.drawable.ic_baseline_developer_mode_24);
 
 

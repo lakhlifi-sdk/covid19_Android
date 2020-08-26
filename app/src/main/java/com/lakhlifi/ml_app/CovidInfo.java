@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -44,5 +45,9 @@ public class CovidInfo extends AppCompatActivity {
         }
 
         return super.onKeyDown(keyCode, event);
+    }
+
+    public void cancel(View view) {
+        startActivity(new Intent(CovidInfo.this,HomeActivity.class));
     }
 }
