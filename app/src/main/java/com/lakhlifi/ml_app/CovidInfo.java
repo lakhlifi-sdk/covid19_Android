@@ -47,5 +47,6 @@ public class CovidInfo extends AppCompatActivity {
 
     public void cancel(View view) {
         startActivity(new Intent(CovidInfo.this,HomeActivity.class));
+        finish();
     }
 }
