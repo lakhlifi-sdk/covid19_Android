@@ -116,7 +116,7 @@ public class UploadActivity extends AppCompatActivity {
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    //@RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void predict() {
         btnPridect.setText("Re-Predict");
         btnPridect.setBackground(this.getResources().getDrawable(R.drawable.btn_round_green));
