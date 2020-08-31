@@ -214,7 +214,7 @@ public class HomeActivity extends AppCompatActivity {
         if (requestCode == READ_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             if (data != null) {
                 Log.i(TAG, "onActivityResult: data.getData"+ data.getData());
-                //uri = data.get
+                uri = data.getData();
                 Intent intent = new Intent(HomeActivity.this, UploadActivity.class);
                 intent.setData(uri);
                 startActivity(intent);
